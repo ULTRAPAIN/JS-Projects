@@ -1,0 +1,161 @@
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+display: grid;
+place-items: center ;
+}
+
+.game-info{
+
+  position: absolute ;
+  color: white;
+  background: black;
+  top: 3rem;
+  padding: 0.5rem 3rem;
+  font-size: 1.1rem;
+  
+}
+
+.tic-tac-toe-game{ 
+  position: relative;
+  top: 1rem;
+width: 90%;
+max-width: 20rem;
+border-radius: 1rem;
+background-color: black;
+aspect-ratio: 1/1;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+padding: 2rem;
+
+}
+
+.box{
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: gradientAnimation 3s ease alternate infinite;
+
+}
+
+
+.box1, .box2, .box4, .box5{
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+.box3, .box6{
+  border-bottom: 2px solid white;
+}
+
+.box7, .box8 {
+  border-right: 2px solid white;
+}
+
+
+.btn{
+  position: relative;
+  color:white;
+  position: relative;
+  background-color: black;
+  width:6.5rem;
+  height:3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-size: 1rem;
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+
+
+.btn:hover{
+  transform: scale(1.1);
+}
+
+
+.gradient-border {
+  --borderWidth: 4px;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+.gradient-background {
+  background-color: black !important;
+}
+.win{
+  z-index: 2;
+  background-color: green;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+      border-color: white; /* Initial color */
+  }
+  50% {
+      background-position: 100% 50%;
+      border-color: yellow; /* Midway color */
+  }
+  100% {
+      background-position: 0% 50%;
+      border-color: red; /* Final color */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
