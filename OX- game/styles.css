@@ -13,6 +13,10 @@ display: grid;
 place-items: center ;
 }
 
+h1{
+  color: white;
+}
+
 .game-info{
 
   position: absolute ;
