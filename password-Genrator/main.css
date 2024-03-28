@@ -1,3 +1,138 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+  
+  
+    .gradient-border {
+        --borderWidth: 4px;
+        position: relative;
+        border-radius: var(--borderWidth);
+      }
+      .gradient-border:after {
+        content: '';
+        position: absolute;
+        top: calc(-1 * var(--borderWidth));
+        left: calc(-1 * var(--borderWidth));
+        height: calc(100% + var(--borderWidth) * 2);
+        width: calc(100% + var(--borderWidth) * 2);
+        background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+        border-radius: calc(2 * var(--borderWidth));
+        z-index:-1;
+        animation: animatedgradient 3s ease alternate infinite;
+        background-size: 300% 300%;
+      }
+
+      .container-1 input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        border-radius: 5px;
+       }
+       
+       .container-1 {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        font-size: 20px;
+        user-select: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 0px rgb(183, 183, 183);
+       }
+       
+       /* Create a custom checkbox */
+       .checkmark {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 1.3em;
+        width: 1.3em;
+        background-color: #ccc;
+        border-radius: 5px;
+       }
+       
+       /* When the checkbox is checked, add a blue background */
+       .container-1 input:checked ~ .checkmark {
+        box-shadow: 3px 3px 0px rgb(183, 183, 183);
+        transition: all 0.2s;
+        opacity: 1;
+        background-image: linear-gradient(45deg, rgb(100, 61, 219) 0%, rgb(217, 21, 239) 100%);
+       }
+       
+       .container-1 input ~ .checkmark {
+        transition: all 0.2s;
+        opacity: 1;
+        box-shadow: 1px 1px 0px rgb(183, 183, 183);
+       }
+       
+       /* Create the checkmark/indicator (hidden when not checked) */
+       .checkmark:after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        transition: all 0.2s;
+       }
+       
+       /* Show the checkmark when checked */
+       .container-1 input:checked ~ .checkmark:after {
+        opacity: 1;
+        transition: all 0.2s;
+       }
+       
+       /* Style the checkmark/indicator */
+       .container-1 .checkmark:after {
+        left: 0.45em;
+        top: 0.25em;
+        width: 0.25em;
+        height: 0.5em;
+        border: solid white;
+        border-width: 0 0.15em 0.15em 0;
+        transform: rotate(45deg);
+       }
+
+       .slider {
+        -webkit-appearance: none;
+        width: 86%;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #4c00ff;
+        background-image: linear-gradient(160deg, #4900f5 0%, #80D0C7 100%);
+        cursor: pointer;
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        cursor: pointer;
+      }
+    @keyframes animatedgradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
