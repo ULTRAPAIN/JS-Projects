@@ -10,4 +10,4 @@
 
 ## Currency Converter
 - **Description:** The Currency Converter is a web application designed to assist users in converting currencies from one denomination to another. This tool enables users to quickly and accurately calculate the equivalent value of a specific amount in one currency compared to another currency.
-- **Deployment Link:** [Password Generator](https://js-projects-currencyconverter.vercel.app)
+- **Deployment Link:** [Currency Converter](https://js-projects-currencyconverter.vercel.app)
