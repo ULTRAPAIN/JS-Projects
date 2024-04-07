@@ -31,6 +31,9 @@ h1{
 .active-2{
 	display:block;
 }
+.active-3{
+	display:block;
+}
 .tic-tac-toe-game{ 
   position: relative;
   top: -3rem;
