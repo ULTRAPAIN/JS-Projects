@@ -31,7 +31,7 @@ function initGame(){
     })
     
     gameBtn.classList.remove('active');
-    gameBtn2.classList.add('active-3');
+    gameBtn2.style.display="";
     gameInfo.classList.add('active-2');
     gameInfo.innerText=`current Player - ${currentPlayer}`;
     
