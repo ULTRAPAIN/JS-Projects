@@ -25,9 +25,12 @@ h1{
   top: 3rem;
   padding: 0.5rem 3rem;
   font-size: 1.1rem;
+	display:none;
   
 }
-
+.active-2{
+	display:block;
+}
 .tic-tac-toe-game{ 
   position: relative;
   top: 1rem;
