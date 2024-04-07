@@ -31,10 +31,10 @@ function initGame(){
     })
     
     gameBtn.classList.remove('active');
-    gameBtn2.classList.add('active');
+    gameBtn2.classList.add('active-3');
     gameInfo.classList.add('active-2');
     gameInfo.innerText=`current Player - ${currentPlayer}`;
-    gameBtn2.classList.add('active');
+    
 }
 
 
