@@ -22,7 +22,7 @@ h1{
   position: absolute ;
   color: white;
   background: black;
-  top: 3rem;
+  top: -1rem;
   padding: 0.5rem 3rem;
   font-size: 1.1rem;
 	display:none;
@@ -33,7 +33,7 @@ h1{
 }
 .tic-tac-toe-game{ 
   position: relative;
-  top: 1rem;
+  top: -3rem;
 width: 90%;
 max-width: 20rem;
 border-radius: 1rem;
