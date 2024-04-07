@@ -92,7 +92,7 @@ function checkGameOver(){
     if (fill_count===9){
         gameInfo.innerText="Game Tied !";
         gameBtn.innerText="New game";
-        gameBtn.classList.add("active");
+        gameBtn.style.display='block';
     }
 
 }
