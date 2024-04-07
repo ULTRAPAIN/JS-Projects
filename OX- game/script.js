@@ -3,7 +3,7 @@
 const gameInfo=document.querySelector('.game-info');
 const boxes=document.querySelectorAll('.box');
 const gameBtn=document.querySelector('.btn');
-const gameBtn2=document.quertSelector('.btn-2');
+const gameBtn2=document.querySelector('.btn-2');
 
 let currentPlayer;
 let gameGrid;
