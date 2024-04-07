@@ -47,7 +47,9 @@ grid-template-columns: repeat(3, 1fr);
 padding: 2rem;
 
 }
-
+.buttons-container{
+	display:flex;
+	justify-content:space-between;}
 .box{
   width: 100%;
   position: relative;
