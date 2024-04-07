@@ -91,9 +91,25 @@ padding: 2rem;
   display: block;
 }
 
+.btn-2{
+  position: relative;
+  color:white;
+  position: relative;
+  background-color: black;
+  width:6.5rem;
+  height:3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-size: 1rem;
+  display: none;
+}
 
+.btn-2:active{
+  transform: scale(1.1);
+}
 
-.btn:hover{
+.btn:active{
   transform: scale(1.1);
 }
 
