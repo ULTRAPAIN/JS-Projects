@@ -3,6 +3,7 @@
 const gameInfo=document.querySelector('.game-info');
 const boxes=document.querySelectorAll('.box');
 const gameBtn=document.querySelector('.btn');
+const gameBtn2=document.quertSelector('.btn-2');
 
 let currentPlayer;
 let gameGrid;
@@ -32,6 +33,7 @@ function initGame(){
     gameBtn.classList.remove('active');
     gameInfo.classList.add('active-2');
     gameInfo.innerText=`current Player - ${currentPlayer}`;
+    gameBtn2.classList.add('active');
 }
 
 
@@ -105,6 +107,11 @@ function swapTurn(){
     gameInfo.innerText=`current Player - ${currentPlayer}`;
 }
 
+function handleReload() {
+    location.reload(); // Reload the page to restart the game
+}
+
+
 
 
 boxes.forEach((box,index)=>{
@@ -117,3 +124,4 @@ boxes.forEach((box,index)=>{
     boxes[index].style.pointerEvents="none";}
 );
 gameBtn.addEventListener('click',initGame);
+gameBtn2.addEventListener('click', handleReload);
