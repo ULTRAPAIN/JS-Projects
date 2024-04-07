@@ -78,7 +78,7 @@ function checkGameOver(){
     if (answer !== ""){
         gameInfo.innerText=`Winner is - ${answer}`
         gameBtn.innerText="New game";
-        gameBtn.classList.add("active");
+        gameBtn.classList.add("active-3");
         return
     }
 
