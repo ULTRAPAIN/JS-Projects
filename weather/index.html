@@ -8,7 +8,75 @@
 </head>
 <body>
     
-<h1>Jai shree ram</h1>
+<!-- <h1>Jai shree ram</h1> -->
+
+<div class="wrapper">
+    <h1>Weather App</h1>
+    <div class="tab-container">
+        <p class="tab" data-userWeather>Your Weather</p>
+        <p class="tab" data-searchWeather>Search Weather</p>
+    </div>
+
+    <div class="weather-container">
+        <!-- grant location -->
+    <div class="grant-location-container">
+        <img src="./assets/asset 0.png"  height="80" width="80" alt="Location Image" loading="lazy">
+        <p>Grant location Acess</p>
+        <p>Allow Access To get Weather Information</p>
+        <button class="btn" data-grant-access>Grant Access</button>
+    </div>
+    <!-- search weather  -->
+
+    <form class=" form-container" data-seaarchForm>
+        <input type="text" placeholder="Search for city ..." data-searchInput>
+        <button class="btn">
+            <img src="./assets/asset 1.png" width="20" height="20" loading="lazy" alt="Search Image">
+        </button>
+    </form>
+    </div>
+
+    <!-- loading screen container -->
+    <div class="loading-container">
+        <img src="./assets/asset 2.gif"  width="150" height="150"  alt="loading Gif">
+        <p>Loading</p>
+
+        <!-- your weather container -->
+        <div class="user-info-container">
+            <!-- city name and flag -->
+            <div class="name">
+                <p data-cityName></p>
+                <img data-countryIcon>
+
+            </div>
+            <!-- weather Description -->
+            <p data-weatherDesc></p>
+            <img data-weatherIcon>
+            <p data-Temperature></p>
+            <!-- 3 cards and parameter -->
+
+            <div class="parameter-container">
+                <!-- card1 -->
+                <div class="parameter">
+                    <img src="./assets/asset 4.png" alt="WindSpeed">
+                    <p>Windspeed</p>
+                    <p data-windspeed></p>
+                </div>
+                 <!-- card2 -->
+                 <div class="parameter">
+                    <img src="./assets/asset 5.png" alt="Humidity">
+                    <p>Humidity</p>
+                    <p data-Humidity></p>
+                </div>
+                 <!-- card3 -->
+                 <div class="parameter">
+                    <img src="./assets/asset 6.png" alt="clouds">
+                    <p>Clouds</p>
+                    <p data-clouds></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
