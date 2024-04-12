@@ -18,7 +18,7 @@ const TabContainer=document.querySelector(".tab-container")
 
 const userTab =document.querySelector("[data-userWeather]")
 const searchTab =document.querySelector("[data-searchWeather]")
-const searchForm = document.querySelector("[data-seaarchForm]")
+const searchForm = document.querySelector("[data-searchForm]")
 const GrantAcess=document.querySelector("[data-grant-access]")
 const searchCity=document.querySelector("[data-searchForm]")
 const messageText = document.querySelector("[data-messageText]");
@@ -42,7 +42,7 @@ getfromSessionStorage();
 function getfromSessionStorage(){
 const localCoordinates=sessionStorage.getItem("user-coordinates")
 if(!localCoordinates){
-    GrantAcess.classList.add("active")
+    granLocation.classList.add("active")
 }
 else{
     const coordinates=JSON.parse(localCoordinates)
@@ -57,7 +57,7 @@ function switchTab(clickedTab){
     }
     if(!searchForm.classList.contains("active")){
         userInfoContainer.classList.remove("active")
-        GrantAcess.classList.remove("active")
+        granLocation.classList.remove("active")
         searchForm.classList.add("active")
     }
     else{
@@ -72,7 +72,7 @@ async function fetchUserWeatherInfo(coordinates) {
     const {lat,lon}=coordinates
     // make grant container invisible
     // make loader visible
-    GrantAcess.classList.remove("active")
+    granLocation.classList.remove("active")
     loadingScreen.classList.add("active")
     try{
         const res=await fetch(
@@ -128,7 +128,8 @@ function showPosition(Position){
         lat:Position.coords.latitude,
         lon:Position.coords.longitude
     }
-    sessionStorage.setItem(userCoordinates,JSON.stringify(userCoordinates));
+    sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates));
+;
     fetchUserWeatherInfo(userCoordinates);
 
 }
@@ -159,7 +160,7 @@ searchForm.addEventListener("submit",(e)=>{
 async function fetchSearchWeatherInfo(city){
     loadingScreen.classList.add("active");
     userInfoContainer.classList.remove("active");
-    GrantAcess.classList.remove("active");
+    granLocation.classList.remove("active");
     try{
         const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
