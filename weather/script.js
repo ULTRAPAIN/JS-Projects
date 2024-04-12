@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 let currentTab=userTab
-const API_KEY="234614f14482a11687adae7a419c9c4a"
+const API_KEY=process.env.API_KEY
 currentTab.classList.add("current-tab")
 getfromSessionStorage();
 
