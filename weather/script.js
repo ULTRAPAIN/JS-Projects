@@ -24,10 +24,19 @@ const searchCity=document.querySelector("[data-searchForm]")
 const messageText = document.querySelector("[data-messageText]");
 let  searchInput=document.querySelector("[data-searchInput]")
 
+document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('background-video');
+  
+    video.addEventListener('ended', function() {
+      this.currentTime = 0; // Reset the playback to the beginning
+      this.play(); // Play the video again
+    });
+  });
 
 let currentTab=userTab
 const API_KEY="234614f14482a11687adae7a419c9c4a"
 currentTab.classList.add("current-tab")
+getfromSessionStorage();
 
 // checks whether the coordinates are present in the storage
 function getfromSessionStorage(){
@@ -93,9 +102,9 @@ function renderWeatherInfo(Weatherdata){
     const Humidity=document.querySelector("[data-Humidity]")
     const Clouds=document.querySelector("[data-clouds]")
     CityName.innerText=Weatherdata?.name
-    countryIcon.src = `https://flagcdn.com/144x108/${weatherdata?.sys?.country.toLowerCase()}.png`;
+    countryIcon.src = `https://flagcdn.com/144x108/${Weatherdata?.sys?.country.toLowerCase()}.png`;
     weatherDesc.innerText=Weatherdata?.weather?.[0]?.description;
-    weatherIcon.src = `http://openweathermap.org/img/w/${weatherdata?.weather?.[0]?.icon}.png`;
+    weatherIcon.src = `http://openweathermap.org/img/w/${Weatherdata?.weather?.[0]?.icon}.png`;
     Temperature.innerText=`${Weatherdata?.main?.temp.toFixed(2)} °C`
     windSpeed.innerText = `${Weatherdata?.wind?.speed.toFixed(2)}m/s`
     Humidity.innerText = `${Weatherdata?.main?.humidity}%`
@@ -116,7 +125,7 @@ searchTab.addEventListener( "click", ()=>{
 
 function showPosition(Position){ 
     const userCoordinates={
-        lat:Position.coords.latitude;
+        lat:Position.coords.latitude,
         lon:Position.coords.longitude
     }
     sessionStorage.setItem(userCoordinates,JSON.stringify(userCoordinates));
@@ -135,13 +144,33 @@ GrantAcess.addEventListener( "click", ()=>{
 
 searchForm.addEventListener("submit",(e)=>{
     e.preventDefault();
-    if(searchInput.value===""){
+    let cityName=searchInput.value
+    if( cityName=== ""){
         return 
     }
-    fetchSearchWeaherInfo(searchInput.value)
+    else{
+        fetchSearchWeatherInfo(cityName)
+        cityName.value = ""
+    }
+    
 
 })
 
-async function fetchSearchWeaherInfo(city){
+async function fetchSearchWeatherInfo(city){
+    loadingScreen.classList.add("active");
+    userInfoContainer.classList.remove("active");
+    GrantAcess.classList.remove("active");
+    try{
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        )
+        const data=  await response.json()
+        loadingScreen.classList.remove("active");
+        userInfoContainer.classList.add("active");
+        renderWeatherInfo(data)
+    }
+    catch(error){
+        loadingScreen.classList.remove("active");
 
+    }
 } 
