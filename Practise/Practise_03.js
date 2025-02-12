@@ -29,3 +29,12 @@ setTimeout(()=>{
     let timeTaken = endTime - startTime;
     console.log(`Time taken: ${timeTaken}ms`);
 },0)
+
+// 3) write a program that prints the HH:MM:SS in the terminal 
+
+const date =new Date();
+const hours = date.getHours();
+const minutes= date.getMinutes();
+const seconds=date.getSeconds();
+
+console.log(`${hours}:${minutes}:${seconds}`);
