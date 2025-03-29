@@ -67,7 +67,7 @@ console.log(value3);
 const value4= setTimeout(()=>{
     const value5 = callArithmetic(1,2,"divide");
     console.log(value5);
-},2000);
-
+},
+2000);
 
  

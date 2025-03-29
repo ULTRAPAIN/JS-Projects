@@ -22,15 +22,15 @@ class Person{
     }
 }
 
-let Ayush= new Person("Ayush",21,"Kavya","TCET","Meera Road","BFF");
+let Ayush= new Person("Yo",21,"Kavya","TCET","Meera Road","BFF");
 let Dashrath= new Person("Dashrath",20,"Kavya","TCET","Bhiwandi","BF");
 
 
 
-Person.compare(Ayush,Dashrath);
+Person.compare(yo,Dashrath);
 
 let person1 = {
-    name: "Ayush",
+    name: "yo",
     age:21,
     city: "Meera Road"
 }
@@ -58,4 +58,4 @@ function status1(person1,person2){
    person1.relation=="BF" && person2.relation=="BF" ? console.log("They are in a relationship"): console.log("They are not in a relationship")
 }
 
-status1(Ayush,Dashrath);
+status1(yo,Dashrath);
