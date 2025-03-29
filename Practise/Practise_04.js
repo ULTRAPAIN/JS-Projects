@@ -17,7 +17,7 @@ console.log(str.substring(0,5))
 
 //Difference between slice and substring is that slice can take negative index but substring cannot
 console.log(str.slice(-5,0))
-console.log(str.substring(-5,0))
+console.log(str.substring(-5,0)) // this will give error
 
 //replace method --> returns a new string with some or all matches of a pattern replaced by a replacement it takes two arguments the pattern and the replacement
 console.log(str.replace('world','everyone'))    
